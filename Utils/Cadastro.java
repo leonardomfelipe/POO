@@ -1,5 +1,5 @@
 package Utils;
 
-public class Cadastro {
-    
+public interface Cadastro {
+    void cadastrar();
 }
