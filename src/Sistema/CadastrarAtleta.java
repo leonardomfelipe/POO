@@ -39,7 +39,6 @@ public class CadastrarAtleta implements Cadastro, Funcao {
             System.out.println("Erro ao cadastrar atleta: " + e.getMessage());
             scanner.nextLine(); // limpar o buffer se der erro
         }
-
     }
 
     public void CadastrarAtleta(Atleta novo) throws Exception {
@@ -52,4 +51,7 @@ public class CadastrarAtleta implements Cadastro, Funcao {
         System.out.println("Atleta adicionado com sucesso!");
     }
 
+    public List<Atleta> listarAtletas() {
+        return listaAtletas.listarTodos();
+    }
 }
