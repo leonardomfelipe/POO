@@ -1,9 +1,9 @@
 package Percursos;
 
 public class Local {
-    private int codigo;
-    private String nome;
-    private String cidade;
+    private final int codigo;
+    private final String nome;
+    private final String cidade;
 
     public Local(String nome, String cidade) {
         this.codigo = 0;

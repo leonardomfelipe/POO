@@ -1,10 +1,14 @@
 package Sistema;
 
 public enum Funcoes {
-    ENCERRAR(new EncerrarPrograma(), "sair");
+    ENCERRAR(new EncerrarPrograma(), "sair"),
+    CADASTRAR_PROVA(new CadastrarProva(), "prova"),
+    CADASTRAR_LOCAL(new CadastrarLocal(), "local"),
+    CADASTRAR_ATLETA(new CadastrarAtleta(), "atleta"),
+    CADASTRAR_PERCURSO(new CadastrarPercurso(), "percurso");
 
-    private Funcao funcao;
-    private String comando;
+    private final Funcao funcao;
+    private final String comando;
 
     Funcoes(Funcao funcao, String comando) {
         this.funcao = funcao;
