@@ -1,10 +1,19 @@
 package Sistema;
 
 import Percursos.Percurso;
+import Utils.Cadastro;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CadastrarPercurso {
+public class CadastrarPercurso implements Cadastro, Funcao {
+    ArrayList<Percurso> listaPercursos;
+
+    public void executar() {
+        CadastrarPercurso cp = new CadastrarPercurso();
+        cp.cadastrar();
+    }
+
     public void cadastrar() {
         Scanner sc = new Scanner(System.in);
         //implementar - codigo do percurso pode ser o código +1
@@ -17,6 +26,7 @@ public class CadastrarPercurso {
         double distancia = sc.nextDouble();
 
         Percurso percurso = new Percurso(nome, distancia, cidade);
+        listaPercursos.add(percurso);
 
     }
 
