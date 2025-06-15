@@ -7,5 +7,8 @@ public class Atleta extends Pessoa {
         super(nome, telefone);
         this.codigo = codigo;
     }
+    public int getCodigo() {
+        return this.codigo;
+    }
 }
 
