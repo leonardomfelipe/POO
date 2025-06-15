@@ -4,7 +4,8 @@ public enum TipoProva {
     CINCO_KM("5k", 30),
     DEZ_KM("10k", 66.67),
     MEIA_MARATONA("21k", 157.5),
-    MARATONA("maratona", 360),;
+    MARATONA("maratona", 360),
+    ;
 
     private final String descricao;
     private double tempoMaximo;
@@ -31,7 +32,6 @@ public enum TipoProva {
         }
         return -1;
     }
-
 
 
     public String getDescricao() {

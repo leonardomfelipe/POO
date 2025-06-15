@@ -1,8 +1,5 @@
 package Provas;
 
-import Percursos.Local;
-import Percursos.Percurso;
-
 public class Prova {
     private int codigo;
     private TipoProva tipo;
@@ -18,12 +15,6 @@ public class Prova {
         this.local = local;
         this.tempoMaximo = tipo.getTempoMaximo();
     }
-
-
-
-
-
-
 
 
 }
