@@ -3,12 +3,13 @@ package Sistema;
 import Provas.Prova;
 import Provas.TipoProva;
 import Utils.Cadastro;
+import Utils.Repositorio;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CadastrarProva implements Cadastro, Funcao {
-    ArrayList<Prova> listaProvas = new ArrayList<>();
+    private Repositorio<Prova> listaProvas = new Repositorio<>();
 
     public void executar() {
         CadastrarProva cp = new CadastrarProva();
@@ -39,6 +40,6 @@ public class CadastrarProva implements Cadastro, Funcao {
         }
 
         Prova prova = new Prova(codigo, tipoProva, percurso, local);
-        listaProvas.add(prova);
+        listaProvas.adicionar(prova);
     }
 }

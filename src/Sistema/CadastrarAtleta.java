@@ -2,14 +2,14 @@ package Sistema;
 
 import Atletas.Atleta;
 import Utils.Cadastro;
-
+import Utils.Repositorio;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CadastrarAtleta implements Cadastro, Funcao {
     Scanner scanner = new Scanner(System.in);
-    private List<Atleta> listaAtletas = new ArrayList<>();
+    private Repositorio<Atleta> listaAtletas = new Repositorio<>();
 
 
     @Override
@@ -42,12 +42,12 @@ public class CadastrarAtleta implements Cadastro, Funcao {
     }
 
     public void CadastrarAtleta(Atleta novo) throws Exception {
-        for (Atleta a : listaAtletas) {
+        for (Atleta a : listaAtletas.listarTodos()) {
             if (a.getCodigo() == novo.getCodigo()) {
                 throw new Exception("Atleta já existente: " + novo.getCodigo());
             }
         }
-        listaAtletas.add(novo);
+        listaAtletas.adicionar(novo);
         System.out.println("Atleta adicionado com sucesso!");
     }
 }
