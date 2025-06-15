@@ -21,6 +21,7 @@ public class CadastrarAtleta implements Cadastro, Funcao {
     @Override
     public void cadastrar() {
         try { //tratamento de exceção da classe cadastrar atleta
+            System.out.println("[ === CADASTRO-ATLETA === ]");
             System.out.print("Código (número inteiro): ");
             int codigo = scanner.nextInt();
             scanner.nextLine(); // limpar o buffer
