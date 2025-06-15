@@ -11,11 +11,11 @@ public abstract class Pessoa {
         this.codigo = codigo;
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
-    
-    public String getTelefone(){
+
+    public String getTelefone() {
         return telefone;
     }
 

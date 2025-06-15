@@ -20,7 +20,8 @@ public class Dados {
         }
 
         try (FileWriter fw = new FileWriter(file)) {
-            fw.write(conteudo);
+            fw.append(conteudo);
+            fw.append("\n");
         }
     }
 

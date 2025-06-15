@@ -5,7 +5,6 @@ import Provas.TipoProva;
 import Utils.Cadastro;
 import Utils.Repositorio;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CadastrarProva implements Cadastro, Funcao {
@@ -40,6 +39,13 @@ public class CadastrarProva implements Cadastro, Funcao {
         }
 
         Prova prova = new Prova(codigo, tipoProva, percurso, local);
+
+        try {
+            prova.gravarProva();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+      
         listaProvas.adicionar(prova);
     }
 }
