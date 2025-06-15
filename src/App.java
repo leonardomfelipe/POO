@@ -8,6 +8,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+            System.out.println("[ === MENU-OPÇÕES === ]");
             System.out.println("Insira a sua opção:");
             System.out.println("sair - para encerrar o programa.");
             System.out.println("atleta - para cadastrar atleta");

@@ -19,6 +19,7 @@ public class CadastrarProva implements Cadastro, Funcao {
 
     public void cadastrar() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("[ === CADASTRO-PROVA === ]");
         System.out.println("Digite o código da prova: ");
         int codigo = sc.nextInt();
         sc.nextLine();
