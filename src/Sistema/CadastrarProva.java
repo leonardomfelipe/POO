@@ -45,7 +45,7 @@ public class CadastrarProva implements Cadastro, Funcao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-      
+
         listaProvas.adicionar(prova);
     }
 }
