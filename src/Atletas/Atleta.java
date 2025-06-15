@@ -2,7 +2,7 @@ package Atletas;
 
 public class Atleta extends Pessoa {
 
-    public Atleta(int codigo, String nome, String telefone){
+    public Atleta(String nome, String telefone, int codigo){
         super(nome, telefone, codigo);
     }
 

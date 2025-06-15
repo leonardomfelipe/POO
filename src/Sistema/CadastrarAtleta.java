@@ -31,7 +31,7 @@ public class CadastrarAtleta implements Cadastro, Funcao {
             System.out.print("Telefone: ");
             String telefone = scanner.nextLine();
 
-            Atleta novo = new Atleta(codigo, nome, telefone);
+            Atleta novo = new Atleta(nome, telefone, codigo);
             CadastrarAtleta(novo);
 
         } catch (Exception e) {
