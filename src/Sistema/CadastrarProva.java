@@ -4,11 +4,9 @@ import Provas.Prova;
 import Provas.TipoProva;
 import Utils.Cadastro;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CadastrarProva implements Cadastro, Funcao {
-    ArrayList<Prova> listaProvas = new ArrayList<>();
 
     public void executar() {
         CadastrarProva cp = new CadastrarProva();
@@ -39,6 +37,11 @@ public class CadastrarProva implements Cadastro, Funcao {
         }
 
         Prova prova = new Prova(codigo, tipoProva, percurso, local);
-        listaProvas.add(prova);
+
+        try {
+            prova.gravarProva();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
