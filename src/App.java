@@ -1,31 +1,39 @@
 import Sistema.CadastrarAtleta;
 import Sistema.Funcao;
 import Sistema.Funcoes;
-
 import java.util.Scanner;
+import Interface.TelaPrincipal;
+
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("[ === MENU-OPÇÕES === ]");
-            System.out.println("Insira a sua opção:");
-            System.out.println("sair - para encerrar o programa.");
-            System.out.println("atleta - para cadastrar atleta");
-            System.out.println("local - para cadastrar local.");
-            System.out.println("percurso - para cadastrar percurso.");
-            System.out.println("prova - para cadastrar prova.");
-            System.out.println("lista atletas - para listar atletas cadastrados.");
-            System.out.println("lista locais - para listar locais cadastrados.");
+        System.out.println("[ MODO DE EXECUÇÃO ]");
+        System.out.println("Digite 'grafico' para abrir a interface");
+        System.out.println("Digite 'texto' para usar o menu no console");
 
-            String enter = scanner.nextLine();
-            Funcao funcao = Funcoes.encontrarFuncao(enter);
+        String modo = scanner.nextLine().trim();
 
-            if (funcao != null) {
-                funcao.executar();
-            } else {
-                System.out.println("Opção inválida.");
+        if (modo.equalsIgnoreCase("grafico")) {
+            new TelaPrincipal().setVisible(true);
+        } else {
+            while (true) {
+                System.out.println("[ === MENU-OPÇÕES === ]");
+                System.out.println("sair - encerrar");
+                System.out.println("atleta - cadastrar atleta");
+                System.out.println("prova - cadastrar prova");
+                // ... outras opções
+
+                String enter = scanner.nextLine();
+                if (enter.equalsIgnoreCase("sair")) break;
+
+                Funcao funcao = Funcoes.encontrarFuncao(enter);
+                if (funcao != null) {
+                    funcao.executar();
+                } else {
+                    System.out.println("Opção inválida.");
+                }
             }
         }
     }
