@@ -19,7 +19,7 @@ public class CadastrarPercurso implements Cadastro, Funcao {
         System.out.println("[ === CADASTRO-PERCURSO === ]");
         System.out.println("Digite o nome do percurso: ");
         String nome = sc.nextLine();
-        System.out.println("Digite o cidade do percurso: ");
+        System.out.println("Digite a cidade do percurso: ");
         String cidade = sc.nextLine();
         System.out.println("Digite a distancia do percurso: ");
         double distancia = sc.nextDouble();
