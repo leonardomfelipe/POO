@@ -1,11 +1,15 @@
 package Sistema;
 
+import java.lang.classfile.instruction.NewMultiArrayInstruction;
+
 public enum Funcoes {
     ENCERRAR(new EncerrarPrograma(), "sair"),
     CADASTRAR_PROVA(new CadastrarProva(), "prova"),
     CADASTRAR_LOCAL(new CadastrarLocal(), "local"),
     CADASTRAR_ATLETA(new CadastrarAtleta(), "atleta"),
-    CADASTRAR_PERCURSO(new CadastrarPercurso(), "percurso");
+    CADASTRAR_PERCURSO(new CadastrarPercurso(), "percurso"),
+    LISTAR_ATLETAS(new ListarAtletas(), "lista atletas"),
+    LISTAR_LOCAIS(new ListarLocais(), "lista locais");
 
     private final Funcao funcao;
     private final String comando;

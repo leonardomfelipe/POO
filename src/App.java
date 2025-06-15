@@ -1,3 +1,4 @@
+import Sistema.CadastrarAtleta;
 import Sistema.Funcao;
 import Sistema.Funcoes;
 
@@ -14,6 +15,8 @@ public class App {
             System.out.println("local - para cadastrar local.");
             System.out.println("percurso - para cadastrar percurso.");
             System.out.println("prova - para cadastrar prova.");
+            System.out.println("lista atletas - para listar atletas cadastrados.");
+            System.out.println("lista locais - para listar locais cadastrados.");
 
             String enter = scanner.nextLine();
             Funcao funcao = Funcoes.encontrarFuncao(enter);

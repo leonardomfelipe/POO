@@ -26,7 +26,7 @@ public class Prova {
     }
 
     public void listarProvas() throws IOException {
-        Dados.ler("Provas", "listaProvas.csv");
+        Dados.ler("Provas");
     }
 
     public int getCodigo() {

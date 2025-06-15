@@ -24,5 +24,11 @@ public class CadastrarLocal implements Cadastro, Funcao {
 
         Local novo = new Local(nome, cidade);
         listaLocais.add(novo);
+
+        try {
+            novo.gravarLocal();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
