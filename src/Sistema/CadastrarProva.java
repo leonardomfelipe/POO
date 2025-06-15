@@ -4,6 +4,8 @@ import Provas.Prova;
 import Provas.TipoProva;
 import Utils.Cadastro;
 import Utils.Repositorio;
+import java.util.List;
+import Provas.SituacaoProva;
 
 import java.util.Scanner;
 
@@ -40,12 +42,21 @@ public class CadastrarProva implements Cadastro, Funcao {
 
         Prova prova = new Prova(codigo, tipoProva, percurso, local);
 
-        try {
-            prova.gravarProva();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         listaProvas.adicionar(prova);
+    }
+
+    public void organizarProvas() {
+        List<Prova> prontas = listaProvas.filtrar(
+                p -> p.getSituacao() == SituacaoProva.INSCRITA
+        );
+
+        if (prontas.isEmpty()) {
+            System.out.println("Nenhuma prova pode ser iniciada.");
+        } else {
+            for (Prova p : prontas) {
+                System.out.println("Prova " + p.getCodigo() + " iniciada.");
+                p.setSituacao(SituacaoProva.EM_ANDAMENTO);
+            }
+        }
     }
 }

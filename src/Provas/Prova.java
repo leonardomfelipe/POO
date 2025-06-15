@@ -1,8 +1,6 @@
 package Provas;
 
-import Utils.Dados;
-
-import java.io.IOException;
+import java.util.List;
 
 public class Prova {
     private int codigo;
@@ -10,6 +8,7 @@ public class Prova {
     private String percurso;
     private String local;
     private double tempoMaximo;
+    private SituacaoProva situacao;
     //atleta inscrito
 
     public Prova(int codigo, TipoProva tipo, String percurso, String local) {
@@ -18,37 +17,18 @@ public class Prova {
         this.percurso = percurso;
         this.local = local;
         this.tempoMaximo = tipo.getTempoMaximo();
-    }
-
-    public void gravarProva() throws IOException {
-        String conteudo = getCodigo() + ";" + getTipo() + ";" + getPercurso() + ";" + getLocal() + ";" + getTempoMaximo();
-        Dados.escrever("Provas", getCodigo() + ".csv", conteudo);
-    }
-
-    public void listarProvas() throws IOException {
-        Dados.ler("Provas", "listaProvas.csv");
+        this.situacao = SituacaoProva.INSCRITA;
     }
 
     public int getCodigo() {
         return codigo;
     }
 
-    public TipoProva getTipo() {
-        return tipo;
+    public SituacaoProva getSituacao() {
+        return situacao;
     }
 
-    public String getPercurso() {
-        return percurso;
+    public void setSituacao(SituacaoProva situacao) {
+        this.situacao = situacao;
     }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public double getTempoMaximo() {
-        return tempoMaximo;
-    }
-
-
 }
-
