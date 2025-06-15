@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CadastrarPercurso implements Cadastro, Funcao {
-    ArrayList<Percurso> listaPercursos;
 
     public void executar() {
         CadastrarPercurso cp = new CadastrarPercurso();
@@ -25,7 +24,12 @@ public class CadastrarPercurso implements Cadastro, Funcao {
         double distancia = sc.nextDouble();
 
         Percurso percurso = new Percurso(nome, distancia, cidade);
-        listaPercursos.add(percurso);
+
+        try {
+            percurso.gravarPercurso();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

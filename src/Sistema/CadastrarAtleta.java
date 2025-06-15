@@ -50,4 +50,5 @@ public class CadastrarAtleta implements Cadastro, Funcao {
         listaAtletas.add(novo);
         System.out.println("Atleta adicionado com sucesso!");
     }
+
 }

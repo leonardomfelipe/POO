@@ -10,4 +10,6 @@ public class Local {
         this.nome = nome;
         this.cidade = cidade;
     }
+
+
 }
