@@ -11,6 +11,7 @@ public class Prova {
     private String local;
     private double tempoMaximo;
     private SituacaoProva situacao;
+    private int tempoFinalSegundos = 0;
     //atleta inscrito
 
     public Prova(int codigo, TipoProva tipo, String percurso, String local) {
@@ -54,8 +55,15 @@ public class Prova {
     public SituacaoProva getSituacao() {
         return situacao;
     }
-
     public void setSituacao(SituacaoProva situacao) {
         this.situacao = situacao;
+    }
+    public void setTempoFinal(int segundos) {
+        this.tempoFinalSegundos = segundos;
+        this.situacao = SituacaoProva.FINALIZADA;
+    }
+    public double getPaceMedio(double distanciaKm) {
+        if (distanciaKm <= 0) return 0;
+        return (tempoFinalSegundos / 60.0) / distanciaKm;
     }
 }
