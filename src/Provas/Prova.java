@@ -1,5 +1,4 @@
 package Provas;
-
 public class Prova {
     private int codigo;
     private TipoProva tipo;
