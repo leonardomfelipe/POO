@@ -42,8 +42,13 @@ public class CadastrarProva implements Cadastro, Funcao {
         }
 
         Prova prova = new Prova(codigo, tipoProva, percurso, local);
-
         listaProvas.adicionar(prova);
+
+        try {
+            prova.gravarProva();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void organizarProvas() {
