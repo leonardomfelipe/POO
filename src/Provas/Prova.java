@@ -1,4 +1,4 @@
-<<<<<<< HEAD:src/Provas/Prova.java
+Prova.java
 package Provas;
 public class Prova {
     private int codigo;
