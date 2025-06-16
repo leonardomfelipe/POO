@@ -18,4 +18,8 @@ public class Repositorio<T> {
     public List<T> filtrar(Predicate<T> condicao) {
         return itens.stream().filter(condicao).collect(Collectors.toList());
     }
+
+    public static final Repositorio<Atletas.Atleta> atletas = new Repositorio<>();
+    public static final Repositorio<Percursos.Local> locais = new Repositorio<>();
+    public static final java.util.Queue<Provas.Prova> provas = new java.util.LinkedList<>();
 }
