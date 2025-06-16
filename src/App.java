@@ -18,26 +18,26 @@ public class App {
         if (modo.equalsIgnoreCase("grafico")) {
             new TelaPrincipal().setVisible(true);
         } else {
+            while (true) {
+                System.out.println("[ === MENU-OPÇÕES === ]");
+                System.out.println("Insira a sua opção:");
+                System.out.println("sair - para encerrar o programa.");
+                System.out.println("atleta - para cadastrar atleta");
+                System.out.println("local - para cadastrar local.");
+                System.out.println("percurso - para cadastrar percurso.");
+                System.out.println("prova - para cadastrar prova.");
+                System.out.println("lista atletas - para listar atletas cadastrados.");
+                System.out.println("lista locais - para listar locais cadastrados.");
+                System.out.println("lista provas - para listar provas cadastradas.");
 
-        while (true) {
-            System.out.println("[ === MENU-OPÇÕES === ]");
-            System.out.println("Insira a sua opção:");
-            System.out.println("sair - para encerrar o programa.");
-            System.out.println("atleta - para cadastrar atleta");
-            System.out.println("local - para cadastrar local.");
-            System.out.println("percurso - para cadastrar percurso.");
-            System.out.println("prova - para cadastrar prova.");
-            System.out.println("lista atletas - para listar atletas cadastrados.");
-            System.out.println("lista locais - para listar locais cadastrados.");
-            System.out.println("lista provas - para listar provas cadastradas.");
+                String enter = scanner.nextLine();
+                Funcao funcao = Funcoes.encontrarFuncao(enter);
 
-            String enter = scanner.nextLine();
-            Funcao funcao = Funcoes.encontrarFuncao(enter);
-
-            if (funcao != null) {
-                funcao.executar();
-            } else {
-                System.out.println("Opção inválida.");
+                if (funcao != null) {
+                    funcao.executar();
+                } else {
+                    System.out.println("Opção inválida.");
+                }
             }
         }
     }
