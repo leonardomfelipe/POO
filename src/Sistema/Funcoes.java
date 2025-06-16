@@ -9,7 +9,8 @@ public enum Funcoes {
     CADASTRAR_ATLETA(new CadastrarAtleta(), "atleta"),
     CADASTRAR_PERCURSO(new CadastrarPercurso(), "percurso"),
     LISTAR_ATLETAS(new ListarAtletas(), "lista atletas"),
-    LISTAR_LOCAIS(new ListarLocais(), "lista locais");
+    LISTAR_LOCAIS(new ListarLocais(), "lista locais"),
+    LISTAR_PROVAS(new ListarProvas(), "lista provas");
 
     private final Funcao funcao;
     private final String comando;

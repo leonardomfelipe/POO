@@ -18,22 +18,26 @@ public class App {
         if (modo.equalsIgnoreCase("grafico")) {
             new TelaPrincipal().setVisible(true);
         } else {
-            while (true) {
-                System.out.println("[ === MENU-OPÇÕES === ]");
-                System.out.println("sair - encerrar");
-                System.out.println("atleta - cadastrar atleta");
-                System.out.println("prova - cadastrar prova");
-                // ... outras opções
 
-                String enter = scanner.nextLine();
-                if (enter.equalsIgnoreCase("sair")) break;
+        while (true) {
+            System.out.println("[ === MENU-OPÇÕES === ]");
+            System.out.println("Insira a sua opção:");
+            System.out.println("sair - para encerrar o programa.");
+            System.out.println("atleta - para cadastrar atleta");
+            System.out.println("local - para cadastrar local.");
+            System.out.println("percurso - para cadastrar percurso.");
+            System.out.println("prova - para cadastrar prova.");
+            System.out.println("lista atletas - para listar atletas cadastrados.");
+            System.out.println("lista locais - para listar locais cadastrados.");
+            System.out.println("lista provas - para listar provas cadastradas.");
 
-                Funcao funcao = Funcoes.encontrarFuncao(enter);
-                if (funcao != null) {
-                    funcao.executar();
-                } else {
-                    System.out.println("Opção inválida.");
-                }
+            String enter = scanner.nextLine();
+            Funcao funcao = Funcoes.encontrarFuncao(enter);
+
+            if (funcao != null) {
+                funcao.executar();
+            } else {
+                System.out.println("Opção inválida.");
             }
         }
     }
