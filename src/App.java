@@ -18,6 +18,7 @@ public class App {
             System.out.println("prova - para cadastrar prova.");
             System.out.println("lista atletas - para listar atletas cadastrados.");
             System.out.println("lista locais - para listar locais cadastrados.");
+            System.out.println("lista provas - para listar provas cadastradas.");
 
             String enter = scanner.nextLine();
             Funcao funcao = Funcoes.encontrarFuncao(enter);
