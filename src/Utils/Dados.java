@@ -1,6 +1,8 @@
 package Utils;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dados {
 
@@ -19,8 +21,9 @@ public class Dados {
             System.out.println("Arquivo já existe");
         }
 
-        try (FileWriter fw = new FileWriter(file)) {
-            fw.append(conteudo);
+        try (FileWriter fw = new FileWriter(file, true)) {
+
+            fw.append(conteudo).append("\n");
             fw.append("\n");
         }
     }
@@ -67,4 +70,20 @@ public class Dados {
         return contador + 1;
     }
 
+    public static List<String> lerTodasLinhas(String caminho, String nomeArquivo) throws IOException {
+        List<String> linhas = new ArrayList<>();
+
+        File arquivo = new File(caminho +"/"+nomeArquivo);
+        if (!arquivo.exists()) {
+            throw new FileNotFoundException("Arquivo não encontrado: "+arquivo.getPath());
+        }
+
+        try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                linhas.add(linha);
+            }
+            return linhas;
+        }
+    }
 }
