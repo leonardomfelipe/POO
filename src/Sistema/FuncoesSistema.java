@@ -2,6 +2,8 @@ package Sistema;
 
 import Atletas.Atleta;
 import Percursos.Local;
+import Provas.Prova;
+import Provas.TipoProva;
 import Utils.Dados;
 import Utils.Repositorio;
 
@@ -11,7 +13,7 @@ import java.util.List;
 public class FuncoesSistema {
     public static void carregarDadosIniciais() {
         try {
-            List<String> linhasAtletas = Dados.lerTodasLinhas("Atleas", "listaAtletas.csv");
+            List<String> linhasAtletas = Dados.lerTodasLinhas("Atletas", "listaAtletas.csv");
 
              for (String linha : linhasAtletas) {
                 String[] partes = linha.split(";");
@@ -35,6 +37,25 @@ public class FuncoesSistema {
             
             Local local = new Local(nome, cidade);
             Repositorio.locais.adicionar(local);
+        }
+
+        List<String> linhasProvas = Dados.lerTodasLinhas("Provas", "listaProvas.csv");
+
+        for (String linha : linhasProvas) {
+            String[] partes = linha.split(";");
+            int codigo = Integer.parseInt(partes[0]);
+            TipoProva tipo = TipoProva.valueOf(partes[1]);
+            String percurso = partes[2];
+            String local = partes[3];
+        
+
+            Prova prova = new Prova(codigo, tipo, percurso, local);
+            Repositorio.provas.add(prova);
+        }
+
+        System.out.println("[ === PROVAS CARREGADAS === ]");
+        for (Prova p : Repositorio.provas) {
+            System.out.println(p);
         }
 
         System.out.println("[ === ATLETAS CARREGADOS === ]");
