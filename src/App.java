@@ -34,10 +34,11 @@ public class App {
             String enter = scanner.nextLine();
             Funcao funcao = Funcoes.encontrarFuncao(enter);
 
-            if (funcao != null) {
-                funcao.executar();
-            } else {
-                System.out.println("Opção inválida.");
+                if (funcao != null) {
+                    funcao.executar();
+                } else {
+                    System.out.println("Opção inválida.");
+                }
             }
         }
     }
